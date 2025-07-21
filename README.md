@@ -84,14 +84,29 @@ Flutter → FastAPI → ML 모델 → 응답 반환
 
 ---
 
-## 📘 API
-### 예측 요청
-POST/predict_yeouido
-Content-Type:application/json
-###Request Body
-{
-"hour":10,
-"weekday"2,
+## 📘 API 
+FastAPI를 통해 서버와 통신하며 예측 모델을 호출합니다.
+아래는 사용된 **예측 관련한 API 목록**입니다.
+
+- 예측 모델은 주차장 위치(여의도/뚝섬)에 따라 분리되어 있으며,
+- 각 모델은 별도의 라우터로 구성되어 정확도를 높였습니다.
+
+![예측 API 흐름](./assets/riverpark_api_flow.png)
+
+## 🧬 ERD
+
+### MySQL
+
+- **user**: 사용자 정보  
+- **hanriver**: 주차장 정보 (이름, 위도, 구획 수 등)  
+- **qa**: 사용자 질문 / 피드백
+
+### Firestore
+
+- **chatRooms → roomId → messages → messageId**  
+  메시지에 작성자, 내용, 타임스탬프 포함
+
+![ERD](./assets/riverpark_erd.png)
 
 ## 🖼 UI 미리보기  
 
@@ -109,12 +124,34 @@ Content-Type:application/json
 
 ## 🧠 트러블슈팅 기록
 
-| 문제 | 해결 방법 |
-|------|-----------|
-| JSON 구조 불일치 | `pandas`로 feature 순서를 고정 정렬 후 예측 |
-| 타입 오류 (np.float32) | Python float로 변환하여 Flutter 디코딩 오류 해결 |
-| 모델 분기 처리 | 여의도/뚝섬 각각의 모델을 라우터 분리로 대응 |
-| 공공데이터 누적값 처리 | 교통량 데이터와 결합하여 일별 주차 대수 추정 |
+실제 API 연동 및 모델 서빙 과정에서  
+다양한 문제를 경험했고, 직접 해결했습니다.
+
+### 🔸 JSON 포맷 불일치 오류
+
+- **문제**: Flutter에서 보낸 JSON과 모델 학습 시 feature 순서가 달라 예측 결과가 엉망
+- **해결**: Pydantic 기반 요청 모델 사용 + pandas로 feature 순서 강제 정렬
+
+---
+
+### 🔸 예측 결과 디코딩 실패
+
+- **문제**: FastAPI 응답에서 `np.float32` 타입이 Flutter에서 `null` 처리됨
+- **해결**: Python float로 변환하여 `jsonable_encoder()`로 직렬화
+
+---
+
+### 🔸 모델 분기 처리 문제
+
+- **문제**: 여의도와 뚝섬의 데이터 분포와 feature 구성이 달라 하나의 모델로 통합 불가
+- **해결**: `/predict_yeouido`, `/predict_ttukseom` 등으로 라우터 분기 처리
+
+---
+
+### 🔸 누적형 공공데이터 처리
+
+- **문제**: 서울시 API는 "누적 입차 차량 수"만 제공하여 시간대별 혼잡도 파악이 어려움
+- **해결**: 교통량 및 유동인구 데이터와 병합하여 시간 단위로 재구성 + 평균값 기반 보정
 
 ---
 
