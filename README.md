@@ -108,17 +108,27 @@ FastAPI를 통해 서버와 통신하며 예측 모델을 호출합니다.
 
 ![ERD](./assets/riverpark_erd.png)
 
-## 🖼 UI 미리보기  
+<h3 align="center">🎨 UI 미리보기</h3>
 
-| 메인 페이지 | 예측 결과 | 채팅 기능 |
-|-------------|------------|-----------|
-| ![main](~~main.gif 필요) | ![predict](~~predict.gif 필요) | ![chat](~~chat.gif 필요) |
-| 메인 페이지 | 예측 결과 | 채팅 기능 |
-| ![main](~~main.gif 필요) | ![predict](~~predict.gif 필요) | ![chat](~~chat.gif 필요) |
-|-------------|------------|-----------|
+<table align="center">
+  <tr>
+    <th>메인 페이지</th>
+    <td><img src="./assets/riverpark_main.gif" width="250"/></td>
+  </tr>
+  <tr>
+    <th>예측 결과</th>
+    <td><img src="./assets/riverpark_predict.gif" width="250"/></td>
+  </tr>
+  <tr>
+    <th>채팅 기능</th>
+    <td><img src="./assets/riverpark_chat.gif" width="250"/></td>
+  </tr>
+</table>
 
-> 한눈에 주차 가능 여부를 확인할 수 있는 UI와  
-> 새로고침, 시간대별 인사말, 지도 마커 등 다양한 기능을 직접 구현했습니다.
+<p align="center">
+한눈에 주차 가능 여부를 확인할 수 있는 UI와  
+새로고침, 시간대별 인사말, 지도 마커 등 다양한 기능을 직접 구현했습니다.
+</p>
 
 ---
 
