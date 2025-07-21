@@ -61,7 +61,7 @@ RiverPark Mate가 그 고민을 덜어드릴 거예요.
 Flutter → FastAPI → ML 모델 → 응답 반환  
 + Firebase를 통한 인증 및 실시간 채팅  
 
-> ![아키텍처 이미지](~~아키텍처 이미지 필요)
+> ![아키텍처 이미지](.assets/RiverPark Mate_시스템구조.png)
 
 ---
 
