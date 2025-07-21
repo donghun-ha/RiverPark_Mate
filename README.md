@@ -1,5 +1,5 @@
 # 🚗 RiverPark Mate
-(./assets/Splash.png)
+[](./assets/Splash.png)
 > 실시간 주차 정보와 혼잡도 예측이 필요한 당신에게  
 > 서울 한강공원의 주차장을 더 똑똑하게 사용하는 방법
 
