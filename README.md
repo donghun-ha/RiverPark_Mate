@@ -108,36 +108,6 @@ FastAPI를 통해 서버와 통신하며 예측 모델을 호출합니다.
 
 ![ERD](./assets/riverpark_erd.png)
 
-<h3 align="center">🌆 UI 미리보기</h3>
-
-<table align="center">
-  <tr>
-    <th align="center">메인 페이지</th>
-    <th align="center">예측 결과</th>
-    <th align="center">채팅 기능</th>
-  </tr>
-  <tr>
-    <td align="center"><img src="./assets/riverpark_main.gif" width="220"/><br/><b>메인 페이지</b></td>
-    <td align="center"><img src="./assets/riverpark_predict.gif" width="220"/><br/><b>예측 결과</b></td>
-    <td align="center"><img src="./assets/riverpark_chat.gif" width="220"/><br/><b>채팅 기능</b></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="./assets/riverpark_login.gif" width="220"/><br/><b>로그인</b></td>
-    <td align="center"><img src="./assets/riverpark_map.gif" width="220"/><br/><b>지도 마커</b></td>
-    <td align="center"><img src="./assets/riverpark_greeting.gif" width="220"/><br/><b>시간대별 인사말</b></td>
-  </tr>
-  <tr>
-    <td align="center"><img src="./assets/riverpark_post.gif" width="220"/><br/><b>게시글 기능</b></td>
-    <td align="center"><img src="./assets/riverpark_admin.gif" width="220"/><br/><b>관리자 응답</b></td>
-    <td align="center"><img src="./assets/riverpark_refresh.gif" width="220"/><br/><b>새로고침</b></td>
-  </tr>
-</table>
-
-<p align="center">
-한눈에 주차 가능 여부를 확인할 수 있는 UI와<br/>
-새로고침, 시간대별 인사말, 지도 마커 등 다양한 기능을 직접 구현했습니다.
-</p>
-
 ---
 
 ## 🧠 트러블슈팅 기록
